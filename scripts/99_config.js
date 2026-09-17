@@ -28,7 +28,9 @@ function getConfig(config, path) {
 function getThemeConfig(lang = null) {
     if (lang) {
         if (!altConfigs.hasOwnProperty(lang)) {
-            const configPath = path.join(themeRoot, '_config.' + lang + '.yml');
+            const siteConfigPath = path.join(hexo.base_dir, '_config.' + hexo.config.theme + '.' + lang + '.yml');
+            const themeConfigPath = path.join(themeRoot, '_config.' + lang + '.yml');
+            const configPath = fs.existsSync(siteConfigPath) ? siteConfigPath : themeConfigPath;
             if (fs.existsSync(configPath)) {
                 const config = yaml.load(fs.readFileSync(configPath));
                 if (config != null) {
