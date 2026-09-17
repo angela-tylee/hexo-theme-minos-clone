@@ -116,6 +116,14 @@ hexo.extend.helper.register('word_count', (content) => {
 });
 
 /**
+ * Format a number with locale-aware thousands separators, e.g. 1000 -> 1,000.
+ */
+hexo.extend.helper.register('format_number', function (num) {
+    const locale = formatRfc5646(getPageLanguage(this.page));
+    return Number(num).toLocaleString(locale || 'en');
+});
+
+/**
  * Export a list of headings of an article
  * [
  *     ['1', 'heading-anchor-1', 'Title of the heading 1', 1],

@@ -34,7 +34,7 @@
         <span class="column is-narrow">
             <% let words = word_count(post._content); %>
             <% let time = duration((words / 150.0) * 60, 'seconds') %>
-            <%= `${ time.humanize() } ${ __('article.read')} (${ __('article.about') } ${ words } ${ __('article.words') })` %>
+            <%= `${ time.humanize() } ${ __('article.read')} (${ __('article.about') } ${ format_number(words) } ${ __('article.words') })` %>
         </span>
         <% } %>
         <% if (index && post.tags && post.tags.length){ %>
