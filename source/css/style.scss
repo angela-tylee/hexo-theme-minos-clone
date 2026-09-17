@@ -184,7 +184,7 @@ a.tag.article-tag {
                 content: " ";
                 position: absolute;
 
-                top: 50%;
+                top: 32px;
                 left: -14.5px;
                 margin-top: -12px;
                 width: 24px;
@@ -201,7 +201,7 @@ a.tag.article-tag {
 
             &.info {
                 border-color: hsl(204, 86%, 53%);
-                background-color: lighten(hsl(204, 86%, 53%), 40%);
+                background-color: lighten(hsl(204, 86%, 53%), 45%);
 
                 &:before {
                     background-color: hsl(204, 86%, 53%);
@@ -221,11 +221,11 @@ a.tag.article-tag {
 
             &.warning {
                 border-color: hsl(48, 100%, 67%);
-                background-color: lighten(hsl(48, 100%, 67%), 24%);
+                background-color: lighten(hsl(48, 100%, 67%), 31%);
 
                 &:before {
                     background-color: hsl(48, 100%, 67%);
-                    background-image: url("../images/question.svg");
+                    background-image: url("../images/exclamation.svg");
                 }
             }
 
@@ -238,6 +238,40 @@ a.tag.article-tag {
                     background-image: url("../images/exclamation.svg");
                 }
             }
+            
+            // 詞彙解釋
+            &.glossary {
+                border-color: hsl(328, 79%, 61%);
+                background-color: lighten(hsl(328, 79%, 61%), 37%);
+
+                &:before {
+                    background-color: hsl(328, 79%, 61%);
+                    background-image: url("../images/question.svg");
+                }
+            }
+
+            // 小提示 / 補充說明
+            &.tips {
+                border-color: hsl(279, 76%, 61%);
+                background-color: lighten(hsl(279, 76%, 61%), 37%);
+
+                &:before {
+                    background-color: hsl(279, 76%, 61%);
+                    background-image: url("../images/lightbulb.svg");
+                }
+            }
+
+            // 參考資料 / 延伸閱讀
+            &.appendix {
+                border-color: hsl(0, 0%, 86%);
+                background-color: lighten(hsl(0, 0%, 86%), 12%);
+
+                &:before {
+                    background-color: hsl(0, 0%, 86%);
+                    background-image: url("../images/info.svg");
+                }
+            }
+
         }
 
         &.pullquote {
@@ -616,6 +650,29 @@ figure.highlight {
         font-weight: 300;
         font-family: inherit !important;
         line-height: 1.5;
+    }
+}
+
+.error-page {
+    .error-code {
+        font-size: 6rem;
+        line-height: 1;
+        font-weight: 300;
+        color: $border-color;
+    }
+
+    .error-message {
+        margin-top: 1.5rem;
+
+        .subtitle {
+            max-width: 32rem;
+            margin: 0 auto 1.5rem;
+        }
+    }
+
+    .error-links-separator {
+        margin: 0 0.5rem;
+        color: $border-color;
     }
 }
 
