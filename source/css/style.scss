@@ -118,7 +118,7 @@ a.tag.article-tag {
             display: inline-block;
         }
 
-        .article-nav-prev a {
+        .article-nav-next a {
             padding-left: 1rem;
 
             &:before {
@@ -129,7 +129,7 @@ a.tag.article-tag {
             }
         }
 
-        .article-nav-next {
+        .article-nav-prev {
             text-align: right;
 
             a {
