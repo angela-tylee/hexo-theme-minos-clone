@@ -1,0 +1,42 @@
+<%
+// The host serves one error document for every missing path, so this page ships
+// each language at once and picks one in the browser from the URL that failed.
+const languages = display_languages();
+const langPath = (language, path) => url_for(is_default_language(language) ? '/' + path : '/' + language + '/' + path);
+%>
+<section class="section error-page">
+    <div class="container has-text-centered">
+        <p class="error-code">404</p>
+    <% languages.forEach((language, index) => { %>
+        <div class="error-message" lang="<%= rfc5646(language) %>" data-error-language="<%= language %>"<%= index === 0 ? '' : ' hidden' %>>
+            <h1 class="title is-4"><%= __in(language, 'error.not_found.title') %></h1>
+            <p class="subtitle is-6"><%= __in(language, 'error.not_found.description') %></p>
+            <p class="error-links">
+                <a href="<%= langPath(language, '') %>"><%= __in(language, 'error.not_found.home') %></a>
+                <span class="error-links-separator">·</span>
+                <a href="<%= langPath(language, 'archives') %>"><%= __in(language, 'error.not_found.archives') %></a>
+            </p>
+        </div>
+    <% }) %>
+    </div>
+</section>
+<script>
+(function () {
+    // Prefixes of the non-default languages, longest first, so that a more
+    // specific tag is matched before a shorter one that it starts with.
+    var prefixes = <%- JSON.stringify(languages
+            .filter(language => !is_default_language(language))
+            .map(language => ({ language, tag: rfc5646(language), prefix: url_for('/' + language + '/') }))
+            .sort((a, b) => b.prefix.length - a.prefix.length)) %>;
+    var path = window.location.pathname;
+    var match = prefixes.filter(function (entry) { return path.indexOf(entry.prefix) === 0; })[0];
+    if (!match) {
+        return;
+    }
+    var messages = document.querySelectorAll('.error-message');
+    for (var i = 0; i < messages.length; i++) {
+        messages[i].hidden = messages[i].getAttribute('data-error-language') !== match.language;
+    }
+    document.documentElement.setAttribute('lang', match.tag);
+})();
+</script>
