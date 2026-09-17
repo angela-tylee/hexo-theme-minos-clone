@@ -9,6 +9,7 @@ body, button, input, select, textarea {
 
 a.tag.article-tag {
     font-size: 0.9rem;
+    text-transform: lowercase;
     text-decoration: none;
 }
 
@@ -69,6 +70,7 @@ a.tag.article-tag {
     .article-meta {
         font-size: .9rem;
         text-transform: uppercase;
+        align-items: center;
 
         @media screen and (max-width: 768px) {
             margin-top: 0.75rem;

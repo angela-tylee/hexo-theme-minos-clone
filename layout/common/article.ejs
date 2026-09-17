@@ -37,6 +37,11 @@
             <%= `${ time.humanize() } ${ __('article.read')} (${ __('article.about') } ${ words } ${ __('article.words') })` %>
         </span>
         <% } %>
+        <% if (index && post.tags && post.tags.length){ %>
+        <% (post._tags || post.tags).forEach(tag => { %>
+            <span class="column is-narrow"><a class="tag is-light article-tag" href="<%- url_for(tag.path) %>">#<%= tag.name %></a></span>
+        <% }) %>
+        <% } %>
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     <% if (post.excerpt && index){ %>
