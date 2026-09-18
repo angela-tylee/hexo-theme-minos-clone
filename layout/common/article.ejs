@@ -6,6 +6,7 @@
             <%= post.title %>
         <% } %>
     </h1>
+    <% if (!is_page()) { %>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             <% if (has_config('article.date_format') && get_config('article.date_format') === 'relative' ) { %>
@@ -43,6 +44,7 @@
         <% }) %>
         <% } %>
     </div>
+    <% } %>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
