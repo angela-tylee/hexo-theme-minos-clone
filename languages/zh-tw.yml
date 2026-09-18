@@ -17,6 +17,12 @@ article:
   words: '字'
   comments: '評論'
   contents: '目錄'
+error:
+  not_found:
+    title: '找不到這個頁面'
+    description: '你要找的頁面不在這裡。它可能已經更名、被封存，或是帶你過來的連結已經失效。'
+    home: '回到首頁'
+    archives: '瀏覽封存'
 search:
   hint: '站內搜尋'
 insight:

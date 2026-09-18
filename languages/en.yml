@@ -17,6 +17,12 @@ article:
   words: 'words'
   comments: 'Comments'
   contents: 'Contents'
+error:
+  not_found:
+    title: 'Page not found'
+    description: 'The page you are looking for is not here. It may have been renamed, archived, or the link that brought you here may be broken.'
+    home: 'Back to home'
+    archives: 'Browse the archives'
 search:
   hint: 'Type something...'
 insight:
