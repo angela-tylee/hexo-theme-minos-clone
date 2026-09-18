@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $family-serif: "Ovo", "Georgia", "STZhongsong", "Microsoft YaHei", serif;
 $family-mono: "Source Code Pro", monospace, "Microsoft YaHei";
 $border-color: #dbdbdb;
@@ -201,7 +203,7 @@ a.tag.article-tag {
 
             &.info {
                 border-color: hsl(204, 86%, 53%);
-                background-color: lighten(hsl(204, 86%, 53%), 45%);
+                background-color: color.adjust(hsl(204, 86%, 53%), $lightness: 45%);
 
                 &:before {
                     background-color: hsl(204, 86%, 53%);
@@ -211,7 +213,7 @@ a.tag.article-tag {
 
             &.success {
                 border-color: hsl(141, 71%, 48%);
-                background-color: lighten(hsl(141, 71%, 48%), 40%);
+                background-color: color.adjust(hsl(141, 71%, 48%), $lightness: 40%);
 
                 &:before {
                     background-color: hsl(141, 71%, 48%);
@@ -221,7 +223,7 @@ a.tag.article-tag {
 
             &.warning {
                 border-color: hsl(48, 100%, 67%);
-                background-color: lighten(hsl(48, 100%, 67%), 31%);
+                background-color: color.adjust(hsl(48, 100%, 67%), $lightness: 31%);
 
                 &:before {
                     background-color: hsl(48, 100%, 67%);
@@ -231,7 +233,7 @@ a.tag.article-tag {
 
             &.danger {
                 border-color: hsl(348, 100%, 61%);
-                background-color: lighten(hsl(348, 100%, 61%), 24%);
+                background-color: color.adjust(hsl(348, 100%, 61%), $lightness: 24%);
 
                 &:before {
                     background-color: hsl(348, 100%, 61%);
@@ -242,7 +244,7 @@ a.tag.article-tag {
             // 詞彙解釋
             &.glossary {
                 border-color: hsl(328, 79%, 61%);
-                background-color: lighten(hsl(328, 79%, 61%), 37%);
+                background-color: color.adjust(hsl(328, 79%, 61%), $lightness: 37%);
 
                 &:before {
                     background-color: hsl(328, 79%, 61%);
@@ -253,7 +255,7 @@ a.tag.article-tag {
             // 小提示 / 補充說明
             &.tips {
                 border-color: hsl(279, 76%, 61%);
-                background-color: lighten(hsl(279, 76%, 61%), 37%);
+                background-color: color.adjust(hsl(279, 76%, 61%), $lightness: 37%);
 
                 &:before {
                     background-color: hsl(279, 76%, 61%);
@@ -264,7 +266,7 @@ a.tag.article-tag {
             // 參考資料 / 延伸閱讀
             &.appendix {
                 border-color: hsl(0, 0%, 86%);
-                background-color: lighten(hsl(0, 0%, 86%), 12%);
+                background-color: color.adjust(hsl(0, 0%, 86%), $lightness: 12%);
 
                 &:before {
                     background-color: hsl(0, 0%, 86%);
